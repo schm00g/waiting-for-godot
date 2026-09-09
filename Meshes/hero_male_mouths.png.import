@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lha6ufk0r5ga"
-path.s3tc="res://.godot/imported/test_level_grass.png-19faecef4a89407dc3064d48a5d7d610.s3tc.ctex"
+uid="uid://brnrc2a2flkgd"
+path.s3tc="res://.godot/imported/hero_male_mouths.png-23b1718100fe03cfc1d383662d96945f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "a947923c666d39fb1f087b73d2d8c082"
+"md5": "7ebef6f33ae171cb7d1e671c6405096b"
 }
 
 [deps]
 
-source_file="res://test_level_grass.png"
-dest_files=["res://.godot/imported/test_level_grass.png-19faecef4a89407dc3064d48a5d7d610.s3tc.ctex"]
+source_file="res://Meshes/hero_male_mouths.png"
+dest_files=["res://.godot/imported/hero_male_mouths.png-23b1718100fe03cfc1d383662d96945f.s3tc.ctex"]
 
 [params]
 

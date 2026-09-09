@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brnrc2a2flkgd"
-path.s3tc="res://.godot/imported/hero_male_mouths.png-c12379ed2027ecfb9073c7a25e0de0cf.s3tc.ctex"
+uid="uid://dvt2xqhcfmlad"
+path.s3tc="res://.godot/imported/test_level_snow.png-7650d8900d336ebdeec0b778f0858ef1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "7ebef6f33ae171cb7d1e671c6405096b"
+"md5": "15b0d155871ee632b0b9c52237f47f4c"
 }
 
 [deps]
 
-source_file="res://hero_male_mouths.png"
-dest_files=["res://.godot/imported/hero_male_mouths.png-c12379ed2027ecfb9073c7a25e0de0cf.s3tc.ctex"]
+source_file="res://Meshes/test_level_snow.png"
+dest_files=["res://.godot/imported/test_level_snow.png-7650d8900d336ebdeec0b778f0858ef1.s3tc.ctex"]
 
 [params]
 

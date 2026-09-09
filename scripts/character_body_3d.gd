@@ -1,8 +1,11 @@
 extends CharacterBody3D
+@onready var anim_player: AnimationPlayer = $Mesh/AnimationPlayer
+@onready var anim_tree: AnimationTree = $AnimationTree
 
 ## Determines how fast the player moves
 @export var speed := 5.0
 const JUMP_VELOCITY = 4.5
+@onready var camera: Node3D = $CameraRig/Camera3D
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -16,7 +19,8 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
-	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var direction := (camera.global_basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	direction = Vector3(direction.x, 0, direction.z).normalized() * input_dir.length()
 	if direction:
 		velocity.x = direction.x * speed
 		velocity.z = direction.z * speed
@@ -25,3 +29,26 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, speed)
 
 	move_and_slide()
+	turn_to(direction)
+	
+	var current_speed:= velocity.length()
+	const RUN_SPEED := 3;
+	const BLEND_SPEED := 0.2;
+	
+	if current_speed > RUN_SPEED:
+		anim_tree.set("parameters/movement/transition_request", "run")
+		var lean := direction.dot(global_basis.x)
+		anim_tree.set("paramaters/run_lean/add_amount", lean)
+		# https://www.youtube.com/watch?v=L4EYYogZlBA 18:49
+	elif current_speed > 0.1:
+		anim_tree.set("parameters/movement/transition_request", "walk")
+		var walk_speed := lerpf(0.5, 1.75, current_speed / RUN_SPEED)
+		anim_tree.set("parameters/walk_speed/scale", walk_speed)
+	else:
+		anim_tree.set("parameters/movement/transition_request", "idle")
+	
+func turn_to(direction: Vector3) -> void:
+	if direction.length() > 0:
+		var yaw:= atan2(-direction.x, -direction.z)
+		yaw = lerp_angle(rotation.y, yaw, 0.25) #linear interpretation 
+		rotation.y = yaw

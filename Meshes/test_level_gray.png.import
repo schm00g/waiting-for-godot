@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://tcymcwyrwicp"
-path.s3tc="res://.godot/imported/test_level_gray.png-e0160fc88b1580baf263c357c72d6ed5.s3tc.ctex"
+path.s3tc="res://.godot/imported/test_level_gray.png-1f0f1725ec3a5a6d2bfc719e42ac06fd.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://test_level_gray.png"
-dest_files=["res://.godot/imported/test_level_gray.png-e0160fc88b1580baf263c357c72d6ed5.s3tc.ctex"]
+source_file="res://Meshes/test_level_gray.png"
+dest_files=["res://.godot/imported/test_level_gray.png-1f0f1725ec3a5a6d2bfc719e42ac06fd.s3tc.ctex"]
 
 [params]
 

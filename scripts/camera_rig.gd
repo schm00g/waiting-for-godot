@@ -4,6 +4,8 @@ extends SpringArm3D
 @export var turn_rate:= 1
 var mouse_input: Vector2 = Vector2()
 var mouse_sensitivity:= 0.07
+@onready var player: Node3D = get_parent()
+var camer_rig_height: float = position.y
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,12 +15,13 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	var look_input:= Input.get_vector("view_left", "view_right", "view_up", "view_down")
+	var look_input:= Input.get_vector("view_right", "view_left", "view_down", "view_up")
 	look_input = turn_rate * look_input * delta
 	look_input += mouse_input 
 	mouse_input = Vector2()
-	rotation_degrees.x += look_input.x
-	rotation_degrees.y += look_input.y
+	
+	rotation_degrees.x += look_input.y
+	rotation_degrees.y += look_input.x
 	rotation_degrees.x = clampf(rotation_degrees.x, -70, 50)
 
 func _input(event: InputEvent) -> void:
@@ -28,3 +31,6 @@ func _input(event: InputEvent) -> void:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	elif event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+func _physics_process(delta: float) -> void:
+	position = player.position + Vector3(0, camer_rig_height, 0)

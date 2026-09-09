@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://7dvqwvw62a6g"]
 
-[ext_resource type="PackedScene" uid="uid://clk51jgvfmyta" path="res://player.tscn" id="1_qn1rc"]
-[ext_resource type="PackedScene" uid="uid://cre17sr67us3y" path="res://test_level.glb" id="2_qn1rc"]
+[ext_resource type="PackedScene" uid="uid://clk51jgvfmyta" path="res://Scenes/player.tscn" id="1_r48yj"]
+[ext_resource type="PackedScene" uid="uid://cre17sr67us3y" path="res://Meshes/test_level.glb" id="2_5ogh5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1svla"]
 sky_top_color = Color(3.85046e-07, 0.47490656, 0.7261259, 1)
@@ -29,6 +29,6 @@ light_energy = 1.25
 shadow_enabled = true
 directional_shadow_max_distance = 170.0
 
-[node name="Player" parent="." unique_id=516653780 instance=ExtResource("1_qn1rc")]
+[node name="Player" parent="." unique_id=516653780 instance=ExtResource("1_r48yj")]
 
-[node name="test_level" parent="." unique_id=276691171 instance=ExtResource("2_qn1rc")]
+[node name="test_level" parent="." unique_id=276691171 instance=ExtResource("2_5ogh5")]

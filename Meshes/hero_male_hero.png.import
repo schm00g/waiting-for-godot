@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bb48lopj66ap2"
-path.s3tc="res://.godot/imported/hero_male_eyes.png-9466a199a235dc6c2d7afbc5d80f8bf8.s3tc.ctex"
+uid="uid://d04ji5uu8xsrp"
+path.s3tc="res://.godot/imported/hero_male_hero.png-dd3594b2941ad63384f69d590a8fdda3.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "e64c44373d9f4201167a5f64ff95ac5a"
-}
 
 [deps]
 
-source_file="res://hero_male_eyes.png"
-dest_files=["res://.godot/imported/hero_male_eyes.png-9466a199a235dc6c2d7afbc5d80f8bf8.s3tc.ctex"]
+source_file="res://Meshes/hero_male_hero.png"
+dest_files=["res://.godot/imported/hero_male_hero.png-dd3594b2941ad63384f69d590a8fdda3.s3tc.ctex"]
 
 [params]
 
