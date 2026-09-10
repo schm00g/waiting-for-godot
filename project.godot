@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/start.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://Meshes/icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://dqkh57ewjw4gc"
+
 [display]
 
 window/stretch/mode="canvas_items"
@@ -65,7 +69,9 @@ view_down={
 
 [physics]
 
-3d/physics_engine="Jolt Physics"
+3d/physics_engine="GodotPhysics3D"
+3d/default_gravity=5.0
+common/physics_interpolation=true
 
 [rendering]
 

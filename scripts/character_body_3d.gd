@@ -1,12 +1,14 @@
 extends CharacterBody3D
 @onready var anim_player: AnimationPlayer = $Mesh/AnimationPlayer
 @onready var anim_tree: AnimationTree = $AnimationTree
+var prev_lean := 0.0
 
 ## Determines how fast the player moves
 @export var speed := 5.0
 const JUMP_VELOCITY = 4.5
 @onready var camera: Node3D = $CameraRig/Camera3D
 
+# locked to 60 frames per second
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -35,11 +37,14 @@ func _physics_process(delta: float) -> void:
 	const RUN_SPEED := 3;
 	const BLEND_SPEED := 0.2;
 	
+	if is_on_floor():
+		anim_tree.set("parameters/movement/transition_request", "fall")
+	
 	if current_speed > RUN_SPEED:
 		anim_tree.set("parameters/movement/transition_request", "run")
 		var lean := direction.dot(global_basis.x)
-		anim_tree.set("paramaters/run_lean/add_amount", lean)
-		# https://www.youtube.com/watch?v=L4EYYogZlBA 18:49
+		prev_lean = lerpf(prev_lean, lean, 0.3)
+		anim_tree.set("paramaters/run_lean/add_amount", prev_lean)
 	elif current_speed > 0.1:
 		anim_tree.set("parameters/movement/transition_request", "walk")
 		var walk_speed := lerpf(0.5, 1.75, current_speed / RUN_SPEED)
