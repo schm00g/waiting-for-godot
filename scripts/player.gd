@@ -29,6 +29,8 @@ var move_input: Vector2 = Vector2.ZERO
 ## This will usually be a normalized vector or zero.
 var move_direction: Vector3 = Vector3.ZERO
 
+const MAX_JUMPS := 3
+var jump_count := 0
 
 ## Called when the node is added to the scene. We use this to enter the initial state.
 func _ready() -> void:
