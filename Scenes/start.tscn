@@ -2,12 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://clk51jgvfmyta" path="res://Scenes/player.tscn" id="1_r48yj"]
 [ext_resource type="PackedScene" uid="uid://cre17sr67us3y" path="res://Meshes/test_level.glb" id="2_5ogh5"]
-[ext_resource type="AudioStream" uid="uid://c5tlkpwms8016" path="res://Audio/Music/temple.mp3" id="3_5ogh5"]
 [ext_resource type="Script" uid="uid://4b3xp6wjw2v4" path="res://Scripts/worldsound.gd" id="3_iceld"]
 [ext_resource type="AudioStream" uid="uid://15g4ham4xpwi" path="res://Audio/Footsteps/stone_step_sounds.tres" id="4_5bn4p"]
 [ext_resource type="AudioStream" uid="uid://dh38ydygvg5q3" path="res://Audio/Footsteps/wood_step_sounds.tres" id="5_5bn4p"]
 [ext_resource type="AudioStream" uid="uid://bv6jm7g57egre" path="res://Audio/Footsteps/sand_step_sounds.tres" id="6_iceld"]
 [ext_resource type="AudioStream" uid="uid://dvp24eauauo4v" path="res://Audio/Footsteps/grass_step_sounds.tres" id="7_knwj7"]
+[ext_resource type="AudioStream" uid="uid://c5h1is0k1uy1q" path="res://Audio/Music/village.mp3" id="8_iceld"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1svla"]
 sky_top_color = Color(0.47427702, 0.7451514, 0.90683234, 1)
@@ -57,7 +57,8 @@ script = ExtResource("3_iceld")
 footstep_sounds = ExtResource("7_knwj7")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=384460015]
-stream = ExtResource("3_5ogh5")
+stream = ExtResource("8_iceld")
+volume_db = -5.0
 autoplay = true
 bus = &"Music"
 
