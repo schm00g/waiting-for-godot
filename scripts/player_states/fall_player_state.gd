@@ -15,6 +15,6 @@ func update(player: Player, delta: float) -> void:
 	var move := player.move_direction * player.move_input.length()
 
 	player.velocity += player.get_gravity() * delta
-	player.update_velocity_using_direction(move, player.base_speed * 0.25)
+	player.update_velocity_using_direction(move)
 	player.move_and_slide()
 	player.turn_to(move)
