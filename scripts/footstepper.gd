@@ -15,3 +15,5 @@ func play_footstep() -> void:
 				stream = info.footstep_sounds
 				break
 	play()
+
+# changed physics engine to DefaultGodot3D from Jolt for this to work
