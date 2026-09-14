@@ -8,13 +8,16 @@ func enter(player: Player) -> void:
 
 func pre_update(player: Player) -> void:
 	if not player.is_on_floor():
-		player.change_state_to(PlayerStates.FALL)
+		return
 
 	elif player.move_input.length() > 0.0:
 		player.change_state_to(PlayerStates.WALK)
 
 	elif Input.is_action_just_pressed("ui_accept"):
 		player.change_state_to(PlayerStates.JUMP)
+		
+	elif Input.is_action_just_pressed("roll"):
+		player.change_state_to(PlayerStates.ROLL)
 
 
 func update(player: Player, _delta: float) -> void:

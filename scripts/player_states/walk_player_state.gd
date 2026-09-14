@@ -20,6 +20,9 @@ func pre_update(player: Player) -> void:
 
 	elif current_speed > player.RUN_SPEED:
 		player.change_state_to(PlayerStates.RUN)
+		
+	elif Input.is_action_just_pressed("roll"):
+		player.change_state_to(PlayerStates.ROLL)
 
 
 func update(player: Player, _delta: float) -> void:
