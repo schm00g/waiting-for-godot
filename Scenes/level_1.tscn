@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://7dvqwvw62a6g"]
+
+[ext_resource type="PackedScene" uid="uid://clk51jgvfmyta" path="res://Scenes/player.tscn" id="1_uy8f0"]
+[ext_resource type="PackedScene" uid="uid://cre17sr67us3y" path="res://Meshes/test_level.glb" id="2_6r07y"]
+[ext_resource type="Script" uid="uid://4b3xp6wjw2v4" path="res://Scripts/worldsound.gd" id="3_6ioyp"]
+[ext_resource type="AudioStream" uid="uid://15g4ham4xpwi" path="res://Audio/Footsteps/stone_step_sounds.tres" id="4_oovug"]
+[ext_resource type="AudioStream" uid="uid://dh38ydygvg5q3" path="res://Audio/Footsteps/wood_step_sounds.tres" id="5_8i23i"]
+[ext_resource type="AudioStream" uid="uid://bv6jm7g57egre" path="res://Audio/Footsteps/sand_step_sounds.tres" id="6_8yhm2"]
+[ext_resource type="AudioStream" uid="uid://dvp24eauauo4v" path="res://Audio/Footsteps/grass_step_sounds.tres" id="7_pjppf"]
+[ext_resource type="Texture2D" uid="uid://lha6ufk0r5ga" path="res://Meshes/test_level_grass.png" id="8_yltlr"]
+[ext_resource type="Script" uid="uid://c2jge3gnlsenv" path="res://Scripts/level_change.gd" id="9_6ssoq"]
+[ext_resource type="Material" uid="uid://cso4f2iyuxpmc" path="res://demo/assets/materials/M_crystal_purple.tres" id="10_imks0"]
+[ext_resource type="Script" uid="uid://c5l40ju84aqgh" path="res://Scripts/level_cube.gd" id="11_dlmop"]
+[ext_resource type="AudioStream" uid="uid://c5h1is0k1uy1q" path="res://Audio/Music/village.mp3" id="12_sda17"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1svla"]
+sky_top_color = Color(0.47427702, 0.7451514, 0.90683234, 1)
+sky_horizon_color = Color(1.353256, 1.353256, 1.353256, 1)
+ground_bottom_color = Color(1.1173323, 1.0394062, 0.9499975, 1)
+ground_horizon_color = Color(1.353256, 1.353256, 1.353256, 1)
+
+[sub_resource type="Sky" id="Sky_ots34"]
+sky_material = SubResource("ProceduralSkyMaterial_1svla")
+
+[sub_resource type="Environment" id="Environment_qn1rc"]
+background_mode = 2
+sky = SubResource("Sky_ots34")
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m52se"]
+resource_name = "grid_grass"
+cull_mode = 2
+albedo_texture = ExtResource("8_yltlr")
+roughness = 0.5
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_utma0"]
+_surfaces = [{
+"aabb": AABB(10.940868, 0, -2.9054985, 2.0335732, 1e-05, 8.8722515),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0),
+"name": "grid_grass",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_5bn4p"]
+resource_name = "test_level_Plane_019"
+_surfaces = [{
+"aabb": AABB(10.940868, 0, -2.9054985, 2.0335732, 1e-05, 8.8722515),
+"attribute_data": PackedByteArray(0, 0, 255, 255, 253, 92, 163, 52, 253, 92, 255, 255, 0, 0, 163, 52),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0),
+"material": SubResource("StandardMaterial3D_m52se"),
+"name": "grid_grass",
+"primitive": 3,
+"uv_scale": Vector4(2.7702184, 5.5267143, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 255, 191, 255, 255, 0, 0, 0, 0, 255, 191, 255, 255, 0, 0, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 255, 191, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_utma0")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_171pc"]
+radius = 1.0
+
+[node name="Node3D" type="Node3D" unique_id=750480690]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1518699444]
+environment = SubResource("Environment_qn1rc")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=671119730]
+transform = Transform3D(1, 0, 0, 0, -0.73135376, 0.6819983, 0, -0.6819983, -0.73135376, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Player" parent="." unique_id=516653780 instance=ExtResource("1_uy8f0")]
+
+[node name="test_level" parent="." unique_id=276691171 instance=ExtResource("2_6r07y")]
+
+[node name="StaticBody3D" parent="test_level/level" parent_id_path=PackedInt32Array(276691171, 595224382) index="0" unique_id=959370781]
+script = ExtResource("3_6ioyp")
+footstep_sounds = ExtResource("4_oovug")
+
+[node name="StaticBody3D" parent="test_level/wood" parent_id_path=PackedInt32Array(276691171, 314302245) index="0" unique_id=1453158457]
+script = ExtResource("3_6ioyp")
+footstep_sounds = ExtResource("5_8i23i")
+
+[node name="StaticBody3D" parent="test_level/snow" parent_id_path=PackedInt32Array(276691171, 1794320059) index="0" unique_id=1896425447]
+script = ExtResource("3_6ioyp")
+footstep_sounds = ExtResource("6_8yhm2")
+
+[node name="StaticBody3D" parent="test_level/grass" parent_id_path=PackedInt32Array(276691171, 1422652286) index="0" unique_id=1232433732]
+script = ExtResource("3_6ioyp")
+footstep_sounds = ExtResource("7_pjppf")
+
+[node name="dirt" parent="test_level" index="4" unique_id=2089501541]
+mesh = SubResource("ArrayMesh_5bn4p")
+
+[node name="StaticBody3D" parent="test_level/dirt" index="0" unique_id=1472623368]
+script = ExtResource("3_6ioyp")
+footstep_sounds = ExtResource("7_pjppf")
+
+[node name="Area3D" type="Area3D" parent="test_level" unique_id=1114419975]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.261824, 4.379454, -14.757971)
+script = ExtResource("9_6ssoq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="test_level/Area3D" unique_id=777899080]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34062386, 2.297433, 0.19927502)
+shape = SubResource("SphereShape3D_171pc")
+debug_color = Color(0.32852855, 0.5449693, 0.81270736, 0.41960785)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="test_level/Area3D/CollisionShape3D" unique_id=1586800711]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19327164, -1.2515402, 0.26497746)
+material = ExtResource("10_imks0")
+script = ExtResource("11_dlmop")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=384460015]
+stream = ExtResource("12_sda17")
+volume_db = -5.0
+autoplay = true
+bus = &"Music"
+
+[connection signal="area_entered" from="test_level/Area3D" to="test_level/Area3D" method="_on_area_entered"]
+[connection signal="body_entered" from="test_level/Area3D" to="test_level/Area3D" method="_on_body_entered"]
+
+[editable path="test_level"]

@@ -6,7 +6,6 @@ func enter(player: Player) -> void:
 	player.anim_tree.set("parameters/movement/transition_request", "roll")
 	
 	var forward := -player.global_transform.basis.z
-	player.velocity = player.velocity.move_toward(Vector3.ZERO, player.base_speed)
 	player.velocity.x = forward.x * player.ROLL_SPEED
 	player.velocity.z = forward.z * player.ROLL_SPEED
  

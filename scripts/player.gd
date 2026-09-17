@@ -15,7 +15,7 @@ const JUMP_VELOCITY = 4.5
 
 const ROLL_SPEED := 6.0
 
-const ROLL_DECELERATION := 10.0
+const ROLL_DECELERATION := 15.0
 
 ## Reference to the camera node for adjusting movement direction.
 @onready var camera: Node3D = $CameraRig/Camera3D

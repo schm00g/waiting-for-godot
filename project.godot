@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="choose"
-run/main_scene="res://Scenes/start.tscn"
+run/main_scene="res://Scenes/level_1.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://Meshes/icon.svg"
 
@@ -27,6 +27,10 @@ PlayerStates="*uid://bgei3gpx86hrr"
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/terrain_3d/plugin.cfg")
 
 [input]
 

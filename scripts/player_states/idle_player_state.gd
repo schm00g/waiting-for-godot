@@ -20,6 +20,6 @@ func pre_update(player: Player) -> void:
 		player.change_state_to(PlayerStates.ROLL)
 
 
-func update(player: Player, _delta: float) -> void:
-	player.velocity = player.velocity.move_toward(Vector3.ZERO, player.base_speed)
+func update(player: Player, delta: float) -> void:
+	player.velocity = player.velocity.move_toward(Vector3.ZERO, player.base_speed * delta)
 	player.move_and_slide()
