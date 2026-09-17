@@ -25,11 +25,11 @@ func pre_update(player: Player) -> void:
 		player.change_state_to(PlayerStates.ROLL)
 
 
-func update(player: Player, _delta: float) -> void:
+func update(player: Player, delta: float) -> void:
 	var move := player.move_direction * player.move_input.length()
 	player.update_velocity_using_direction(move)
 	player.move_and_slide()
-	player.turn_to(move)
+	player.turn_to(move, delta)
 
 	var walk_speed := lerpf(0.5, 1.75, player.get_current_speed() / player.RUN_SPEED)
 	player.anim_tree.set("parameters/walk_speed/scale", walk_speed)

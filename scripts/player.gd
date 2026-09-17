@@ -17,6 +17,8 @@ const ROLL_SPEED := 6.0
 
 const ROLL_DECELERATION := 15.0
 
+const TURN_SPEED := 17.0
+
 ## Reference to the camera node for adjusting movement direction.
 @onready var camera: Node3D = $CameraRig/Camera3D
 
@@ -63,10 +65,10 @@ func _physics_process(delta: float) -> void:
 
 
 ## Rotates the player to face the given direction and smooths the rotation.
-func turn_to(direction: Vector3) -> void:
+func turn_to(direction: Vector3, delta: float) -> void:
 	if direction.length() > 0:
 		var yaw := atan2(-direction.x, -direction.z)
-		yaw = lerp_angle(rotation.y, yaw, .25)
+		yaw = lerp_angle(rotation.y, yaw, 1.0 - exp(-TURN_SPEED * delta))
 		rotation.y = yaw
 
 

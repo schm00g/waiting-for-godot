@@ -5,5 +5,6 @@ var WALK := WalkPlayerState.new()
 var RUN := RunPlayerState.new()
 var FALL := FallPlayerState.new()
 var JUMP := JumpPlayerState.new()
+var LAND := LandPlayerState.new()
 var ROLL := RollPlayerState.new()
 # landing state before idle?

@@ -30,5 +30,5 @@ func update(player: Player, delta: float) -> void:
 	
 	player.update_velocity_using_direction(move)
 	player.move_and_slide()
-	player.turn_to(move)
+	player.turn_to(move, delta)
  

@@ -9,7 +9,7 @@ func enter(player: Player) -> void:
 func pre_update(player: Player) -> void:
 	if player.is_on_floor():
 		player.jump_count = 0
-		player.change_state_to(PlayerStates.IDLE)
+		player.change_state_to(PlayerStates.LAND)
 		
 	elif Input.is_action_just_pressed("ui_accept") and player.jump_count < player.MAX_JUMPS:
 		player.change_state_to(PlayerStates.JUMP)
@@ -21,4 +21,4 @@ func update(player: Player, delta: float) -> void:
 	player.velocity += player.get_gravity() * delta
 	player.update_velocity_using_direction(move)
 	player.move_and_slide()
-	player.turn_to(move)
+	player.turn_to(move, delta)
