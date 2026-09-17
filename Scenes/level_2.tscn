@@ -87,7 +87,7 @@ collision_mask = 3
 
 [node name="Player" parent="." unique_id=516653780 instance=ExtResource("6_bl0du")]
 
-[node name="PlayerCapsule" parent="." unique_id=1096936746 instance=ExtResource("7_q0ycs")]
+[node name="Player (Capsule)" parent="." unique_id=1096936746 instance=ExtResource("7_q0ycs")]
 transform = Transform3D(0.176947, 0, -0.98422, 0, 1, 0, 0.98422, 0, 0.176947, 223.143, 105.348, -1833.08)
 visible = false
 
