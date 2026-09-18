@@ -11,7 +11,6 @@
 [ext_resource type="Script" uid="uid://c2jge3gnlsenv" path="res://Scripts/level_change.gd" id="9_6ssoq"]
 [ext_resource type="Material" uid="uid://cso4f2iyuxpmc" path="res://demo/assets/materials/M_crystal_purple.tres" id="10_imks0"]
 [ext_resource type="Script" uid="uid://c5l40ju84aqgh" path="res://Scripts/level_cube.gd" id="11_dlmop"]
-[ext_resource type="AudioStream" uid="uid://b5xpudrtd0fwh" path="res://Audio/Music/atmos.mp3" id="12_uy8f0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1svla"]
 sky_top_color = Color(0.47427702, 0.7451514, 0.90683234, 1)
@@ -118,12 +117,6 @@ debug_color = Color(0.32852855, 0.5449693, 0.81270736, 0.41960785)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19327164, -1.2515402, 0.26497746)
 material = ExtResource("10_imks0")
 script = ExtResource("11_dlmop")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=384460015]
-stream = ExtResource("12_uy8f0")
-volume_db = -6.0
-autoplay = true
-bus = &"Music"
 
 [connection signal="area_entered" from="test_level/Area3D" to="test_level/Area3D" method="_on_area_entered"]
 [connection signal="body_entered" from="test_level/Area3D" to="test_level/Area3D" method="_on_body_entered"]
