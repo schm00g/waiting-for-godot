@@ -32,7 +32,7 @@ func play(stream: AudioStream) -> void:
 
 
 ## Change to a different track. Fades out the old one first if requested.
-func crossfade_to(stream: AudioStream, duration: float = 0.5) -> void:
+func crossfade_to(stream: AudioStream, _duration: float = 0.5) -> void:
 	if stream == null or stream == _player.stream:
 		return
 

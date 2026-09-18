@@ -119,6 +119,5 @@ material = ExtResource("10_imks0")
 script = ExtResource("11_dlmop")
 
 [connection signal="area_entered" from="test_level/Area3D" to="test_level/Area3D" method="_on_area_entered"]
-[connection signal="body_entered" from="test_level/Area3D" to="test_level/Area3D" method="_on_body_entered"]
 
 [editable path="test_level"]

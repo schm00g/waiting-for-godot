@@ -21,5 +21,13 @@ func pre_update(player: Player) -> void:
 
 
 func update(player: Player, delta: float) -> void:
-	player.velocity = player.velocity.move_toward(Vector3.ZERO, player.base_speed * delta)
+	# Hard-stop horizontal movement. We keep velocity.y so gravity still
+	# applies and the character doesn't float.
+	player.velocity.x = 0.0
+	player.velocity.z = 0.0
+
+	# Apply gravity so is_on_floor() stays correct and we don't hover.
+	player.velocity.y += player.get_gravity().y * delta
+	if player.is_on_floor() and player.velocity.y < 0.0:
+		player.velocity.y = 0.0
 	player.move_and_slide()
