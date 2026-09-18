@@ -13,12 +13,10 @@ func _ready() -> void:
 	# Autoloads are ready before the main scene, so this is a safe place
 	# to build the player.
 	_player = AudioStreamPlayer.new()
+	_player.volume_db = -6.0
 	_player.bus = bus
 	add_child(_player)
-
-	# If you set a default track in the inspector, start it now.
-	if initial_track != null:
-		play(initial_track)
+	play(load("res://Audio/Music/atmos.mp3"))
 
 
 ## Start a track. If it's already playing, this is a no-op.
@@ -47,3 +45,11 @@ func stop() -> void:
 
 func set_volume_db(db: float) -> void:
 	_player.volume_db = db
+	
+	
+func is_playing() -> bool:
+	return _player.playing
+
+
+func get_current_stream() -> AudioStream:
+	return _player.stream
