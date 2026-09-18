@@ -3,7 +3,7 @@ extends SpringArm3D
 @onready var camera: Camera3D = $Camera3D
 @export var turn_rate:= 1
 var mouse_input: Vector2 = Vector2()
-var mouse_sensitivity:= 0.07
+var mouse_sensitivity:= 0.14
 @onready var player: Node3D = get_parent()
 var camer_rig_height: float = position.y
 

@@ -2,11 +2,15 @@
 extends Node
 
 @onready var terrain: Terrain3D = find_child("Terrain3D")
-
+@export var player_spawn: Vector3 = Vector3(100, 0, 100)
 
 func _ready():
 	if not Engine.is_editor_hint() and has_node("UI"):
 		$UI.player = $Player
+		
+	var player := get_tree().get_first_node_in_group("Player")
+	if player:
+		player.global_position = player_spawn
 
 	# Load Sky3D into the demo environment if enabled
 	if Engine.is_editor_hint() and has_node("Environment") and \

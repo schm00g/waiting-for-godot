@@ -74,6 +74,7 @@ dual_scaling = true
 
 [node name="Demo" type="Node" unique_id=142383843]
 script = ExtResource("1_uhnj4")
+player_spawn = null
 
 [node name="UI" parent="." unique_id=1763193921 instance=ExtResource("2_42uki")]
 
